@@ -69,6 +69,7 @@ tools = [CustomMultiplyTool(), CustomAddTool(), CustomDivideTool()]
 memory = ConversationBufferWindowMemory(memory_key="memory", return_messages=True, window_size=3)
 memory.clear()
 agent_kwargs = {"extra_prompt_messages" : [MessagesPlaceholder(variable_name="memory")]}
+#initialize openai multi function agents with available tools and llm
 agent = initialize_agent(tools, llm = llm_chat, agent=AgentType.OPENAI_MULTI_FUNCTIONS, 
                          agent_kwargs=agent_kwargs, memory = memory, verbose = True)
 
