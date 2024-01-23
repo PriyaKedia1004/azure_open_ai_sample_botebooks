@@ -1,5 +1,6 @@
 langchain==0.0.353
 faiss-cpu==1.7.4
+openpyxl==3.1.2
 langchain-community==0.0.7
 langchain-core==0.1.4
 pandas==2.1.4
