@@ -15,7 +15,7 @@ import os
 
 load_dotenv()
 
-df = pd.read_excel(r"C:\Users\priyakedia\Desktop\Ticket examples.xlsx", engine = "openpyxl") #Replace it with the path to ticket file
+df = pd.read_excel(r"Ticket examples.xlsx", engine = "openpyxl") #Replace it with the path to ticket file
 
 df.drop(columns = ["Subcategory"], axis = 1, inplace = True)
 
