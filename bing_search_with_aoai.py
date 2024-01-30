@@ -9,7 +9,7 @@ load_dotenv(".env")
 search_url = "https://api.bing.microsoft.com/" + "v7.0/search"
 subscription_key = os.getenv("BING_SUBSCRIPTION_KEY")
 
-client = AzureOpenAI(azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT"),
+client = AzureOpenAI(azure_endpoint = os.getenv("AZURE_OPENAI_API_BASE"),
                      api_key = os.getenv("AZURE_OPENAI_API_KEY"),
                      api_version = os.getenv("OPENAI_API_VERSION"),
                      )
