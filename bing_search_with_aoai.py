@@ -14,7 +14,7 @@ client = AzureOpenAI(azure_endpoint = os.getenv("AZURE_OPENAI_API_BASE"),
                      api_version = os.getenv("OPENAI_API_VERSION"),
                      )
 
-def get_search_results(search_query, n_count = 1):
+def get_search_results(search_query, n_count = 2):
     headers = {"Ocp-Apim-Subscription-Key": subscription_key}
     params = {"q": search_query, "textDecorations": True, "answerCount" : n_count, "textFormat": "HTML"}
     response = requests.get(search_url, headers=headers, params=params)
@@ -24,11 +24,9 @@ def get_search_results(search_query, n_count = 1):
 
     return search_results
 
-search_results = get_search_results(search_query)
-
 def run_conversation(user_query):
     # Step 1: send the conversation and available functions to the model
-    messages = [{"role": "user", "content": search_query}]
+    messages = [{"role": "user", "content": user_query}]
     tools = [
         {
             "type": "function",
@@ -88,5 +86,7 @@ def run_conversation(user_query):
         return second_response.choices[0].message.content
     else:
         return response_message
-    
-print(run_conversation(search_query))
+
+if __name__ == '__main__':
+    search_query = "What is the inauguration date for Ayodhya Ram Mandir in India and who will perform the inauguration?"
+    print(run_conversation(search_query))
