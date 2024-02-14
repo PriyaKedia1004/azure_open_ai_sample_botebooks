@@ -16,7 +16,7 @@ import os
 
 load_dotenv()
 
-openai.api_base = os.getenv("AZURE_OPENAI_ENDPOINT")
+openai.api_base = os.getenv("AZURE_OPENAI_API_BASE")
 openai.api_key = os.getenv("AZURE_OPENAI_API_KEY")
 openai.api_type = "azure"
 
