@@ -5,3 +5,4 @@ langchain-community==0.0.7
 langchain-core==0.1.4
 pandas==2.1.4
 openai==1.6.1
+langchain-openai==0.0.6
