@@ -5,7 +5,6 @@ from langchain.chains import LLMChain, StuffDocumentsChain, MapReduceDocumentsCh
 import tiktoken
 from dotenv import load_dotenv
 from langchain_openai import AzureChatOpenAI
-from langchain.chat_models import Azu
 from langchain_community.document_loaders import WebBaseLoader
 import json
 from langchain.chains.summarize import load_summarize_chain
