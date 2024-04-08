@@ -11,8 +11,6 @@ class Program
     static async Task Main(string[] args)
     {
         // Replace with your Azure Speech service subscription key and region
-        // var speechKey = "63417bf8afd6407d97f129c2c8bd2906";
-        // var speechRegion = "centralIndia";
         var speechKey = Environment.GetEnvironmentVariable("SUBSCRIPTION_KEY");
         var speechRegion = Environment.GetEnvironmentVariable("SPEECH_REGION");
         Console.WriteLine($"SpeechKey: {speechKey}");
